@@ -28,7 +28,6 @@ function bottomLeft(matrix,x1,y1,x2,y2){
 
 function main(m,n){
     var matrix = new Array(m);
-
     for (var i = 0; i < matrix.length; i++) {
     matrix[i] = new Array(n);
     }
@@ -36,4 +35,4 @@ function main(m,n){
     return matrix;
 }
 
-main(4,4);
+console.log(main(6,4));
