@@ -11,7 +11,6 @@ function deepEqual(obj1, obj2){
                 flagKey= false;
             }
             else{
-
                 if(typeof obj1[key1[i]] === 'object' && typeof obj2[key2[i]] === 'object' ){
                     deepEqual(obj1[key1[i]],obj2[key2[i]]);
                 }
