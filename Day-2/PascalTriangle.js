@@ -14,4 +14,8 @@ function main(n){
 	}
 }
 
+var x = () => {
+	return 1;
+}
+
 main(5);
