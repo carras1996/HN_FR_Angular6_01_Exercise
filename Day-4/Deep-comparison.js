@@ -2,7 +2,7 @@ function deepEqual(obj1, obj2){
     if(obj1 === obj2){
         return true;
     }
-    let key1 = Object.keys(obj1);
+    let key1 = Object.keys(obj1); //MANG KEY
     let key2 = Object.keys(obj2);
     if(key1.length === key2.length){
         let flagKey = true;
@@ -21,12 +21,7 @@ function deepEqual(obj1, obj2){
                 }
             }
         }
-        if(flagKey === false){
-            return false;
-        }
-        else{
-            return true;
-        }
+        return flagKey;
     }
     else{
         return false;
