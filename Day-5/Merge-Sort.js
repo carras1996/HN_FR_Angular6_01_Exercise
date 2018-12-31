@@ -12,8 +12,6 @@ function mergeSort(arr) {
         mergeSort(right)
     );
 }
-
-// compare the arrays item by item and return the concatenated result
 function merge(left, right) {
     let result = [];
     let indexLeft = 0;
