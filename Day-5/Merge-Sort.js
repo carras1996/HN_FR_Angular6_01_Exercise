@@ -1,41 +1,36 @@
-function merge(arr, l, m, r) {
-    let n1 = m - l + 1;
-    let n2 = r - m;
-    let L = new Array[n1];
-    let R = new Array[n2];
-    for (let i = 0; i < n1; ++i)
-        L[i] = arr[l + i];
-    for (let j = 0; j < n2; ++j)
-        R[j] = arr[m + 1 + j];
-    let i = 0, j = 0;
-    let k = l;
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            i++;
-        }
-        else {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
+function mergeSort(arr) {
+    if (arr.length === 1) {
+        return arr;
     }
-    while (i < n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
-    while (j < n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
+
+    const middle = Math.floor(arr.length / 2);
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle);
+
+    return merge(
+        mergeSort(left),
+        mergeSort(right)
+    );
 }
-function sort(arr, l, r) {
-    if (l < r) {
-        let m = (l + r) / 2;
-        sort(arr, l, m);
-        sort(arr, m + 1, r);
-        merge(arr, l, m, r);
+
+// compare the arrays item by item and return the concatenated result
+function merge(left, right) {
+    let result = [];
+    let indexLeft = 0;
+    let indexRight = 0;
+
+    while (indexLeft < left.length && indexRight < right.length) {
+        if (left[indexLeft] < right[indexRight]) {
+            result.push(left[indexLeft]);
+            indexLeft++;
+        } else {
+            result.push(right[indexRight]);
+            indexRight++;
+        }
     }
-} 
+
+    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
+}
+
+const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3];
+console.log(mergeSort(list)); // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
