@@ -1,20 +1,34 @@
 function hotelBooking(arrivals, departures, K){
     // length arrivals and departures equal
     let listTimeGuest = [];
-    let count = 1;
+    let count = K;
     for(let i = 0; i< arrivals.length; i++){
         listTimeGuest.push([arrivals[i], departures[i]]);
     }
-    for(let i = 0; i< listTimeGuest.length - 1; i++){
-        if(listTimeGuest[i][1] > listTimeGuest[i+1][0]){
-            count++;
+
+    let roomUsed = [];
+
+    for(let i = 0; i < listTimeGuest.length; i++){
+        if(count > 0){
+            roomUsed.push(listTimeGuest[i]);
+            count--;
+        }
+        if(count === 0){
+            for(let j = 0; j< roomUsed.length;j++){
+                if(listTimeGuest[i][0]> roomUsed[j][1]){
+                    roomUsed.unshift();
+                    roomUsed.push(listTimeGuest[i]);
+                    count++;
+                    count--;
+                }
+            }
         }
     }
-    if(count <= K){
+    if(count >= 0){
         return true;
     }
     else return false;
 }
 
-var M = hotelBooking([1, 3, 5,7], [2, 6, 8,9], 3);
+var M = hotelBooking([1, 2,6,8], [4, 5, 9,10], 2);
 console.log(M);
