@@ -1,8 +1,8 @@
-function swap(itemA, itemB) {
-    let temp = itemA;
-    itemA = itemB;
-    itemB = temp;
-}
+// function swap(itemA, itemB) {
+//     let temp = itemA;
+//     itemA = itemB;
+//     itemB = temp;
+// }
 function changeColRow(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = i; j < arr.length; j++) {
