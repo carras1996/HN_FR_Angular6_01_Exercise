@@ -1,14 +1,18 @@
-function mapMethod(array, callback) {
+function mapMethod(array, func) {
   let result = [];
   for (let i of array) {
-    i = callback(i);
+    i = func(i);
     result.push(i);
   }
   return result;
 }
 
-function mapFunc(i) {
-  return i * i;
+function mapFunc(a) {
+  return a + 10;
 }
 
-console.log(mapMethod([1, 2, 3, 4, 5, 6], mapFunc));
+function mapFunc1(a) {
+  return 1;
+}
+
+console.log(mapMethod([1, 2, 3, 4, 5, 6], mapFunc1));
