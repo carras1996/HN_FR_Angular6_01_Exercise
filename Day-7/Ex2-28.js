@@ -2,11 +2,25 @@ function add(a, b) {
     return a + b;
 }
 
-function addg(numa){
-    if(numa === undefined){
-        return undefined;
+function addg(num){
+    let acc;
+    if(num === undefined){
+        return acc;
+    }
+    else{
+        acc = num;
+        return (nump) => {
+            if(nump === undefined){
+                return acc;
+            }
+            else{
+                acc +=nump;
+                return addg(acc);
+            }
+        }
     }
 }
+
 
 console.log(addg()); // undefined
 console.log(addg(2)()); // 2

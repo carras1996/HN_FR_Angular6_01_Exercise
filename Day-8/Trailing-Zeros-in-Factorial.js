@@ -20,4 +20,6 @@ function zerosNumber(number){
     return count;
 }
 
+
+
 console.log(zerosNumber(factorial(5)));
