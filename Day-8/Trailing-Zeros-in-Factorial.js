@@ -7,7 +7,7 @@ function factorial(number){
     }
 }
 
-console.log(factorial(25));
+// console.log(factorial(25));
 
 // function zerosNumber(number){
 //     var count = 0;
@@ -19,7 +19,17 @@ console.log(factorial(25));
 
 //     return count;
 // }
+function zerosNumber(number){
+    debugger;
+    var count = 0;
+    var i = 1;
+    while(Math.pow(5,i) <= number){
+        count += Math.floor(number / Math.pow(5,i));
+        i++;
+    }
+    return count;
+}
 
 
 
-// console.log(zerosNumber(factorial(25)));
+console.log(zerosNumber(125));
