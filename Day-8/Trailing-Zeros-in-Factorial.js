@@ -7,19 +7,19 @@ function factorial(number){
     }
 }
 
-console.log(factorial(5));
+console.log(factorial(25));
 
-function zerosNumber(number){
-    var count = 0;
-    for(let i of number.toString().split('')){
-        if(i==='0'){
-            count ++;
-        }
-    }
+// function zerosNumber(number){
+//     var count = 0;
+//     for(let i of number.toString().split('')){
+//         if(i==='0'){
+//             count ++;
+//         }
+//     }
 
-    return count;
-}
+//     return count;
+// }
 
 
 
-console.log(zerosNumber(factorial(5)));
+// console.log(zerosNumber(factorial(25)));
