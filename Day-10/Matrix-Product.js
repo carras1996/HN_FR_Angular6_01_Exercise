@@ -25,6 +25,7 @@ function matrixProduct(matrix){
             if(i === 0 && j === 0){
                 max = matrix[i][j];
                 min = matrix[i][j];
+                continue;
             }
             if( i > 0){
                 let tempMax = Math.max(matrix[i][j]*maxMatrix[i-1][j], matrix[i][j]*minMatrix[i-1][j] );
