@@ -2,16 +2,14 @@ function Promise_all(promises) {
     let result = [];
     return new Promise((resolve, reject) => {
         // Your code here.
-        async function execute(){
-            for(let element of promises){
+        async function execute() {
+            for (let element of promises) {
                 let data = await element;
                 result.push(data);
             };
             resolve(result);
         }
         execute();
-        
-        
     });
 }
 
