@@ -86,6 +86,9 @@
                   })
                   .then(comments => {
                     post.comments = comments;
+                    $scope.$apply(() => {
+                      $scope.users = users;
+                    })
                     console.log(users);
                   })
               });
