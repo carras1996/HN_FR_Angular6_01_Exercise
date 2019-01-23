@@ -4,20 +4,24 @@ function binarySearch(arr, number) {
   let max = arr[arr.length - 1];
 
   while (max > min) {
-    let mid = (min + max) / 2;
+    debugger;
+    let mid = min + Math.floor((max - min) / 2);
     if (number === mid) {
       return true;
     }
     if (mid < number) {
-      min = mid;
+      min = mid + 1;
     //   max = max;
     }
     else{
         // min = min;
-        max = mid;
+        max = mid ;
     }
+  }
+  if(min === number){
+    return true;
   }
   return false;
 }
 
-console.log(binarySearch([1,2,3,4,5,6,8,12,18,21], 20));
+console.log(binarySearch([1,2,3,4,5,6,8,12,18,21], 9));

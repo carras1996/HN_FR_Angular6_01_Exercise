@@ -20,14 +20,13 @@ function binarySearch(arr, min,max, number){
 }
 
 function findMedianMatrix(matrix){
-    
+    debugger;
     var minVal = Infinity;
     var maxVal = -Infinity;
     for (let i = 0; i < matrix.length; i++) {
         maxVal = Math.max(maxVal, matrix[i][matrix[0].length - 1]);
         minVal = Math.min(minVal, matrix[i][0]);
     }
-    debugger;
     var mid = Math.floor((matrix[0].length * matrix.length)/2);
     let count;
     let current;
@@ -46,7 +45,7 @@ function findMedianMatrix(matrix){
     }
 }
 
-console.log(findMedianMatrix([[1, 3, 5], [2, 6, 9], [3, 6, 9]]));
+console.log(findMedianMatrix([[1, 1, 1], [1, 6, 9], [3, 6, 9]]));
 
 
 
