@@ -33,7 +33,7 @@ function ajax(url, cb) {
   
   // YOUR CODE HERE
   function response(obj) {
-    let {foo: foo, baz: baz, bam: {qux: qux1}} = obj;
+    let {foo: foo, baz: baz, bam: {qux: qux1}} = obj; // trais key, phai value
     let {foo: foo1, bar: bar, bam: {qux: qux2, qam: qam} } = defaults;
     let data = {
       foo: foo+foo1,

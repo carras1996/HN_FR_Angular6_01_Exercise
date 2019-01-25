@@ -36,6 +36,7 @@ function findMedianMatrix(matrix){
         for(let j = 0; j< matrix.length; j++){
             if(matrix[j].includes(i)){
                 current++;
+               
             }
             count = count + binarySearch(matrix[j], matrix[j][0], matrix[j][matrix[j].length - 1],i);
             if(count === mid && current !== 0){
@@ -45,7 +46,7 @@ function findMedianMatrix(matrix){
     }
 }
 
-console.log(findMedianMatrix([[1, 1, 1], [1, 6, 9], [3, 6, 9]]));
+console.log(findMedianMatrix([[1, 3, 5], [2, 6, 9], [3, 6, 9]]));
 
 
 
