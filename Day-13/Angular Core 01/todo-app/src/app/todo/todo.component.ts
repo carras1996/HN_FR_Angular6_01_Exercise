@@ -24,7 +24,7 @@ export class TodoComponent implements OnInit {
     }
   }
   onToggle() {
-    console.log(this.todo.id);
+    // console.log(this.todo.id);
     for (const i of this.todoList) {
       if (i.id === this.todo.id) {
         i.completed = !i.completed;
