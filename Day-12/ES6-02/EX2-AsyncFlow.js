@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 
-   // callback
+   // callback cho cac tac vu la bien, bat buoc phai dung de qui
 (() => {
     let res = '';
     let fileName = '1024';
@@ -27,7 +27,7 @@ const fs = require('fs');
     let res = '';
     let fileName = '1024';
     function readFilePromise(fileName){
-        return new Promise(function(resole,reject){
+        return new Promise(function(resolve,reject){
             fs.readFile(`./numfiles/${fileName}`, 'utf-8', function(err, data){
                 if (err) {
                     console.log(res);
@@ -36,7 +36,7 @@ const fs = require('fs');
                     let arr = data.split(' ');
                     res += arr[arr.length - 1].split('')[1];
                     fileName = arr[arr.length - 2];
-                    resole(fileName);
+                    resolve(fileName);
                 }
             })
                 
@@ -58,7 +58,7 @@ const fs = require('fs');
     let res = '';
     let fileName = '1024';
     function readFilePromise(fileName){
-        return new Promise(function(resole,reject){
+        return new Promise(function(resolve,reject){
             fs.readFile(`./numfiles/${fileName}`, 'utf-8', function(err, data){
                 if (err) {
                     console.log(res);
@@ -67,7 +67,7 @@ const fs = require('fs');
                     let arr = data.split(' ');
                     res += arr[arr.length - 1].split('')[1];
                     fileName = arr[arr.length - 2];
-                    resole(fileName);
+                    resolve(fileName);
                 }
             })
                 

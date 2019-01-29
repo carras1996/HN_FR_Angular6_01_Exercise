@@ -9,4 +9,5 @@ function calcFibonaci(n){
     return listRes.get(n);
 }
 
-console.log(calcFibonaci(6));
+
+console.log(calcFibonaci(11));

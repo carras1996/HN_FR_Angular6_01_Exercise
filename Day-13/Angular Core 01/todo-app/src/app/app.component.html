@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="row justify-content-center">ToDo Lists</h1>
+  <h4 class="row justify-content-center">Enter text into the input field to add items to your list.</h4>
+  <h4 class="row justify-content-center">Click the item to mark it as complete.</h4>
+  <h4 class="row justify-content-center">Click the "X" to remove the item from your list.</h4>
+  <h4 class="row justify-content-center">{{todoDemo}}</h4>
+  <div class="row justify-content-center">
+    <section id="tasks">
+      <form id="tasks-form" class="d-flex">
+        <input type="text" class="form-control" placeholder="Enter Todo" (keyup) = "onPress($event)">
+        <button type="submit" id="action" (click)="onAdd()">Add</button>
+      </form>
+      <ul id="tasks-list">
+        <li *ngFor="let todo of todoList">
+          <app-todo [todo]="todo" [todoList]="todoList"></app-todo>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+
