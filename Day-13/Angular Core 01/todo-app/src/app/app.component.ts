@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TodoComponent } from './todo/todo.component';
 
 @Component({
@@ -18,12 +18,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {}
 
-  onPress(event) {
-    this.todoDemo = event.target.value;
-  }
+  // onPress(event) {
+  //   this.todoDemo = event.target.value;
+  // }
 
-  onAdd() {
-    this.todoList.push({id: Math.floor(1000 * Math.random()), content: this.todoDemo, completed: false});
+  onAdd(input) {
+    this.todoList.push({id: Math.floor(1000 * Math.random()), content: input.value, completed: false});
+    input.value = '';
   }
 
 }

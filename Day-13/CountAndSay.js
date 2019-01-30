@@ -24,7 +24,7 @@ function Count(number){
             count = 1;
         }
     }
-    return resArr.join().split(',').join('');
+    return resArr.join('').split(',').join('');
 }
 
-console.log(Say(11));
+console.log(Say(5));
