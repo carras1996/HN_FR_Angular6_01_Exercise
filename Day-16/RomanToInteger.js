@@ -41,17 +41,22 @@ function romanToNumber(roman){
     if(arr.includes(undefined)){
         return undefined;
     }
+    debugger;
     for(let i = 0; i<arr.length; i++){
+        if(arr[i] < arr[i+1] && arr[i] <= arr[i+2] ){
+            return undefined;
+        }
         if(arr[i] < arr[i+1]){
             if((arr[i] === 1 && (arr[i+1] === 5 || arr[i+1] === 10)) || (arr[i] === 10 && (arr[i+1] === 50 || arr[i+1] === 100)) || (arr[i] === 100 && (arr[i+1] === 500 || arr[i+1] === 1000))){
                 arr[i] = -arr[i];
             }
             else return undefined;
         }
-}
+        
+    }
     return arr.reduce(function(acc, crr){
         return acc + crr;
     },0);
 }
 
-console.log(romanToNumber('MLXVI'));
+console.log(romanToNumber('MCMXC'));
